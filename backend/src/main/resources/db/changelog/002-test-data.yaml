@@ -1,0 +1,223 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002-test-data
+      author: woodstove
+      context: dev
+      changes:
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 68.5}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '23 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '23 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 70.2}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '22 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '22 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 72.8}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '21 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '21 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 75.1}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '20 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '20 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 78.4}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '19 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '19 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 82.0}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '18 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '18 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 85.5}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '17 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '17 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 88.2}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '16 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '16 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 92.1}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '15 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '15 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 95.8}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '14 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '14 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 98.3}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '13 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '13 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 96.5}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '12 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '12 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 93.2}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '11 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '11 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 89.7}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '10 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '10 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 85.4}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '9 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '9 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 81.1}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '8 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '8 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 77.8}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '7 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '7 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 74.5}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '6 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '6 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 72.0}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '5 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '5 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 70.8}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '4 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '4 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 69.5}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '3 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '3 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 68.2}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '2 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '2 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 67.5}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '1 hour'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '1 hour'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-01"}
+              - column: {name: temperature, valueNumeric: 66.8}
+              - column: {name: recorded_at, valueComputed: "NOW()"}
+              - column: {name: created_at, valueComputed: "NOW()"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-02"}
+              - column: {name: temperature, valueNumeric: 65.0}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '12 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '12 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-02"}
+              - column: {name: temperature, valueNumeric: 66.5}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '10 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '10 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-02"}
+              - column: {name: temperature, valueNumeric: 68.2}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '8 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '8 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-02"}
+              - column: {name: temperature, valueNumeric: 70.1}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '6 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '6 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-02"}
+              - column: {name: temperature, valueNumeric: 71.8}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '4 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '4 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-02"}
+              - column: {name: temperature, valueNumeric: 72.5}
+              - column: {name: recorded_at, valueComputed: "NOW() - INTERVAL '2 hours'"}
+              - column: {name: created_at, valueComputed: "NOW() - INTERVAL '2 hours'"}
+        - insert:
+            tableName: temperature_readings
+            columns:
+              - column: {name: sensor_id, value: "pi-sensor-02"}
+              - column: {name: temperature, valueNumeric: 73.0}
+              - column: {name: recorded_at, valueComputed: "NOW()"}
+              - column: {name: created_at, valueComputed: "NOW()"}
