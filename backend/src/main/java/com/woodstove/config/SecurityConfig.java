@@ -19,6 +19,15 @@ public class SecurityConfig {
     private final ApiKeyAuthFilter apiKeyAuthFilter;
 
     @Bean
+    @Order(0)
+    public SecurityFilterChain staticResourcesFilterChain(HttpSecurity http) throws Exception {
+        http
+            .securityMatcher("/", "/index.html", "/*.js", "/*.css", "/*.ico", "/*.png", "/*.svg", "/_app/**", "/assets/**")
+            .authorizeHttpRequests(auth -> auth.anyRequest().permitAll());
+        return http.build();
+    }
+
+    @Bean
     @Order(1)
     public SecurityFilterChain apiKeyFilterChain(HttpSecurity http) throws Exception {
         http
