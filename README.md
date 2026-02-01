@@ -2,6 +2,8 @@
 
 A full-stack application to record and display temperature sensor data from a Raspberry Pi.
 
+**Live:** https://woodstove.fly.dev/
+
 ## Architecture
 
 ```
