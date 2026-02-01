@@ -1,4 +1,6 @@
-const API_BASE = '/api';
+import { auth } from './auth';
+
+const API_BASE = import.meta.env.VITE_API_URL || '/api';
 
 export interface TemperatureReading {
 	id: number;
@@ -29,11 +31,22 @@ export interface TemperatureRequest {
 	recordedAt?: string;
 }
 
+function getAuthHeaders(): HeadersInit {
+	const token = auth.getToken();
+	if (token) {
+		return {
+			Authorization: `Bearer ${token}`
+		};
+	}
+	return {};
+}
+
 export async function postTemperature(data: TemperatureRequest): Promise<TemperatureReading> {
 	const response = await fetch(`${API_BASE}/temperatures`, {
 		method: 'POST',
 		headers: {
-			'Content-Type': 'application/json'
+			'Content-Type': 'application/json',
+			...getAuthHeaders()
 		},
 		body: JSON.stringify(data)
 	});
@@ -58,8 +71,14 @@ export async function getTemperatures(params?: {
 	const query = searchParams.toString();
 	const url = `${API_BASE}/temperatures${query ? `?${query}` : ''}`;
 
-	const response = await fetch(url);
+	const response = await fetch(url, {
+		headers: getAuthHeaders()
+	});
 	if (!response.ok) {
+		if (response.status === 401) {
+			auth.logout();
+			throw new Error('Session expired. Please sign in again.');
+		}
 		throw new Error(`Failed to get temperatures: ${response.statusText}`);
 	}
 	return response.json();
@@ -76,16 +95,28 @@ export async function getStats(params?: {
 	const query = searchParams.toString();
 	const url = `${API_BASE}/temperatures/stats${query ? `?${query}` : ''}`;
 
-	const response = await fetch(url);
+	const response = await fetch(url, {
+		headers: getAuthHeaders()
+	});
 	if (!response.ok) {
+		if (response.status === 401) {
+			auth.logout();
+			throw new Error('Session expired. Please sign in again.');
+		}
 		throw new Error(`Failed to get stats: ${response.statusText}`);
 	}
 	return response.json();
 }
 
 export async function getSensors(): Promise<Sensor[]> {
-	const response = await fetch(`${API_BASE}/sensors`);
+	const response = await fetch(`${API_BASE}/sensors`, {
+		headers: getAuthHeaders()
+	});
 	if (!response.ok) {
+		if (response.status === 401) {
+			auth.logout();
+			throw new Error('Session expired. Please sign in again.');
+		}
 		throw new Error(`Failed to get sensors: ${response.statusText}`);
 	}
 	return response.json();
