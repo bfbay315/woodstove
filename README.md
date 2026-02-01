@@ -52,6 +52,43 @@ npm run dev
 
 The dashboard will be available at http://localhost:5173
 
+## Production Deployment
+
+The application is deployed on [Fly.io](https://fly.io) with [Supabase](https://supabase.com) PostgreSQL.
+
+### Database Setup (Supabase)
+
+1. Create a new project on [Supabase](https://supabase.com)
+2. Get your connection string from Project Settings > Database > Connection string (URI)
+3. The format is: `postgresql://postgres:[PASSWORD]@db.[PROJECT-REF].supabase.co:5432/postgres`
+
+### Deploy to Fly.io
+
+1. Install the [Fly CLI](https://fly.io/docs/hands-on/install-flyctl/)
+
+2. Create the app:
+   ```bash
+   fly apps create woodstove
+   ```
+
+3. Set your secrets:
+   ```bash
+   fly secrets set \
+     DB_HOST=db.[PROJECT-REF].supabase.co \
+     DB_PORT=5432 \
+     DB_NAME=postgres \
+     DB_USER=postgres \
+     DB_PASSWORD=your-password \
+     API_KEY=your-sensor-api-key
+   ```
+
+4. Update `VITE_GOOGLE_CLIENT_ID` in `fly.toml` with your Google OAuth client ID
+
+5. Deploy:
+   ```bash
+   fly deploy
+   ```
+
 ## API Endpoints
 
 ### POST /api/temperatures
