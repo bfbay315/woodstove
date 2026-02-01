@@ -1,0 +1,35 @@
+# Backend
+backend/.gradle/
+backend/build/
+backend/bin/
+backend/*.class
+
+# Frontend
+frontend/node_modules/
+frontend/.svelte-kit/
+frontend/build/
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# Claude Code local settings
+.claude/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Docker volumes (if created locally)
+postgres_data/
